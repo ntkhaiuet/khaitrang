@@ -1,0 +1,174 @@
+/* PC */
+@media (min-width: 64em) {
+}
+
+/* Tablet and mobile */
+@media (max-width: 63.9375em) {
+  /* .btn {
+    padding: 13px 16px;
+  } */
+
+  #nav .subnav a {
+    padding: 5px 16px;
+  }
+
+  #footer .copyright a {
+    display: inline-block;
+    padding: 10px 0;
+  }
+}
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+  #footer .socials-list {
+    font-size: 48px;
+  }
+
+  #footer .socials-list a {
+    margin: 0 8px;
+  }
+
+  .sleep-title h2 {
+    font-size: 20px;
+  }
+
+  .sleep-title {
+    padding: 30px 16px;
+  }
+
+  .sleep-info {
+    width: 600px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+  .s-full-width,
+  #content .s-col-full {
+    width: 100% !important;
+  }
+
+  .s-mt-8 {
+    margin-top: 8px;
+  }
+
+  #header {
+    overflow: hidden;
+  }
+
+  #header .menu-mobile-btn {
+    display: block;
+  }
+
+  #nav {
+    display: block;
+  }
+
+  #nav .subnav {
+    position: initial;
+    background-color: #333;
+  }
+
+  #nav .subnav a {
+    color: #fff;
+    padding: 5px 40px;
+  }
+
+  #nav li:hover .subnav {
+    display: none;
+  }
+
+  #nav li a {
+    padding: 1px 24px;
+  }
+
+  #nav > li {
+    display: block;
+  }
+
+  #nav > li:first-child {
+    display: inline-block;
+  }
+
+  #footer .socials-list {
+    font-size: 28px;
+  }
+
+  #footer .socials-list a {
+    margin: 0 4px;
+  }
+
+  #ngungay {
+    width: 180px;
+  }
+
+  .btn {
+    width: 150px;
+  }
+
+  .sleep-title h2 {
+    font-size: 14px;
+  }
+
+  .sleep-title {
+    display: none;
+    padding: 8px;
+  }
+
+  .info-details h4 {
+    padding: 4px;
+    font-size: 13px;
+  }
+
+  .info-details:first-child {
+    border-start-start-radius: 10px;
+    border-start-end-radius: 10px;
+  }
+
+  .sleep-info {
+    width: 230px;
+    max-width: calc(100% - 16px);
+    max-height: calc(100% - 16px);
+  }
+
+  #control-music .button-music:hover {
+    opacity: 1;
+  }
+
+  .mute-music:hover,
+  .dropdown-music:hover {
+    background-color: #000;
+  }
+}
+
+/* Đếm ngày yêu mobile */
+@media (max-width: 992px) {
+  #wrapper {
+    grid-column: span 12;
+  }
+
+  #clock-box #clock {
+    grid-column: 2 / 12;
+  }
+
+  #demngayyeu .avt {
+    width: 120px;
+    height: 120px;
+  }
+
+  #info .one,
+  #info .two {
+    grid-column: span 12;
+  }
+
+  #heart {
+    grid-column: span 12;
+    padding-bottom: 1rem;
+  }
+
+  #demngayyeu footer {
+    font-size: 1.2rem;
+    margin: 0;
+    padding-bottom: 2rem;
+  }
+}

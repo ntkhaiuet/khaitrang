@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thekhai.online</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css">
+    <style>/* Reset CSS */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Common */
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: #ccc;
+  color: #000;
+}
+/* Common */
+
+/* Begin: Header and nav */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 46px;
+  background-color: black;
+  z-index: 1;
+}
+
+#nav {
+  display: inline-block;
+}
+
+#nav,
+.subnav {
+  list-style-type: none;
+}
+
+#nav > li {
+  display: inline-block;
+}
+
+#nav li {
+  position: relative;
+}
+
+#nav > li > a {
+  color: white;
+  text-transform: uppercase;
+}
+
+#nav li a {
+  display: block;
+  line-height: 46px;
+  text-decoration: none;
+  padding: 0 24px;
+  font-size: 15px;
+}
+
+#nav li:hover .subnav {
+  display: block;
+}
+
+#nav > li:hover > a,
+#nav .subnav li:hover a {
+  background-color: #ccc;
+  color: black;
+}
+
+#nav .subnav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.open-subnav {
+  display: block !important;
+}
+
+#nav .subnav a {
+  color: black;
+  line-height: 38px;
+  padding: 0 16px;
+}
+
+#header .menu-mobile-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+}
+
+#header .menu-mobile-btn {
+  float: right;
+  padding: 0 23px;
+}
+
+#header .menu-mobile-btn:hover {
+  background-color: #ccc;
+}
+
+#header .menu-mobile-btn:hover .menu-icon {
+  color: #000;
+}
+
+#header .menu-icon {
+  color: white;
+  line-height: 46px;
+}
+/* End: Header and nav */
+
+/* Begin: Slider */
+#slider .mySlides {
+  position: relative;
+  margin-top: 46px;
+}
+
+#slider1 {
+  padding-top: 50%;
+  background: url("assets/img/slider/slider1.jpg") top center / cover no-repeat;
+}
+
+#slider2 {
+  padding-top: 50%;
+  background: url("assets/img/slider/slider2.jpg") top center / cover no-repeat;
+}
+
+#slider3 {
+  padding-top: 50%;
+  background: url("assets/img/slider/slider3.jpg") top center / cover no-repeat;
+}
+
+#slider4 {
+  padding-top: 50%;
+  background: url("assets/img/slider/slider4.jpg") top center / cover no-repeat;
+}
+/* End: Slider */
+
+/* Begin: Footer */
+#footer {
+  background-color: #f1f1f1;
+  padding: 64px 16px;
+  text-align: center;
+  margin-bottom: 46px;
+}
+
+#footer .socials-list {
+  font-size: 24px;
+}
+
+#footer .copyright,
+#footer .copyright a,
+#footer .socials-list a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+#footer .copyright a:hover,
+#footer .socials-list a:hover {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+#footer .copyright {
+  margin: 15px 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+/* End: Footer */
+
+/* Begin: Đếm ngày yêu */
+#demngayyeu p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+#demngayyeu img {
+  max-width: 100%;
+}
+
+#demngayyeu {
+  position: relative;
+  display: grid;
+  font-family: "Segoe UI", sans-serif;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(auto, auto);
+  color: #3e3e3e;
+  text-shadow: 0.4px 0.4px 0.4px rgba(0, 0, 0, 0.2);
+  background-color: #f6f6f6;
+}
+
+#demngayyeu h1 {
+  font-weight: lighter;
+  grid-column: span 3;
+  text-align: center;
+  color: #ec407a;
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+}
+
+#wrapper {
+  display: grid;
+  grid-column: 3 / 11;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(auto, auto);
+  grid-row-gap: 10px;
+  margin-top: 3.6rem;
+  margin-bottom: 3.6rem;
+}
+
+#clock-box,
+#info {
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+#clock-box #clock {
+  grid-column: 4 / 10;
+  background-color: #f8c8c8;
+  padding: 0.6rem 2rem;
+  padding-top: 0.8rem;
+  text-align: center;
+  font-size: 2.4rem;
+  border-radius: 10rem;
+}
+
+#demngayyeu date,
+time {
+  display: block;
+}
+
+#demngayyeu date {
+  font-size: 18px;
+}
+
+#demngayyeu time {
+  font-family: "Arial", sans-serif;
+  line-height: 3.2rem;
+  letter-spacing: 2px;
+}
+
+#demngayyeu .avt {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#info {
+  margin-top: 2.6rem;
+}
+
+#heart {
+  grid-column: span 2;
+  display: grid;
+  grid-template-rows: 2;
+  font-size: 44px;
+  color: #b90d46;
+  align-self: center;
+  padding-bottom: 2.6rem;
+  text-align: center;
+}
+
+#demngayyeu anni {
+  font-size: 16px;
+  letter-spacing: 0.2px;
+}
+
+#info .one {
+  grid-column: 3 / 6;
+  text-align: center;
+}
+
+#info .two {
+  grid-column: 8 / 11;
+  text-align: center;
+}
+
+#demngayyeu footer {
+  grid-column: span 3;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: lighter;
+  margin-top: 1.2rem;
+}
+
+#music {
+  grid-column: 2;
+  position: relative;
+  z-index: 1000;
+  opacity: 0.4;
+}
+
+#mask {
+  background-image: linear-gradient(to top, #6d44cc5d 0%, #f09cd880 100%);
+  opacity: 0.42;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+/* End: Đếm ngày yêu */
+
+/* Begin: Tính giờ ngủ */
+#tinhgiongu {
+  background: url("assets/img/tinhgiongu/bgsleep.jpg") top center / cover no-repeat;
+  padding-top: 50%;
+  min-height: 300px;
+  position: relative;
+}
+
+.sleep-info {
+  background-color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 800px;
+  max-width: calc(100% - 32px);
+  max-height: calc(100% - 32px);
+  box-shadow: 0 0 1px #000;
+  border-radius: 10px;
+}
+
+.sleep-title {
+  background-color: rgba(0, 150, 136);
+  color: #fff;
+  padding: 40px 16px;
+  text-shadow: 0 0 5px #000;
+  border-start-start-radius: 10px;
+  border-start-end-radius: 10px;
+}
+
+.info-details:nth-of-type(odd) {
+  background-color: rgba(238, 238, 238, 0.9);
+}
+
+.info-details h4 {
+  padding: 10px;
+}
+/* End: Tính giờ ngủ */
+
+/* Begin: Control music */
+#control-music {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 46px;
+  background-color: black;
+  z-index: 1;
+}
+
+.dropdown-music {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 23px;
+  z-index: 1;
+}
+
+.dropdown-music:hover,
+.mute-music:hover {
+  cursor: pointer;
+  background-color: #f44336;
+}
+
+.dropdown-music i,
+.mute-music i {
+  line-height: 46px;
+  color: #fff;
+}
+
+.mute-music {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 23px;
+  z-index: 1;
+}
+
+.list-music {
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  top: -300px;
+  right: 0;
+  box-shadow: 0 0 6px #000;
+  display: none;
+  transform-origin: bottom right;
+  animation: listmusic ease-in 0.2s;
+}
+
+.show-list-music {
+  display: block;
+}
+
+.list-music ul {
+  height: 300px;
+  width: 250px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.list-music li {
+  border-top: 1px solid #ccc;
+  text-indent: 12px;
+  padding: 8px 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.list-music li:hover {
+  background-color: #ccc !important;
+  color: #000;
+  cursor: pointer;
+}
+
+.list-music li:first-child {
+  border-top: none;
+}
+
+.list-music li:last-child {
+  border-bottom: 1px solid #ccc;
+}
+
+.opening-music {
+  background-color: #fff;
+  color: #000;
+}
+
+#control-music .title-music {
+  color: #fff;
+  text-align: center;
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: 300;
+  position: relative;
+  top: 3px;
+}
+
+#control-music .list-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+#control-music .button-music {
+  padding: 4px 8px;
+  color: #fff;
+  min-width: 28px;
+}
+
+#control-music .button-music:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+#control-music .button-music.active {
+  color: #ec407a;
+}
+/* End: Control music */
+
+@keyframes listmusic {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}</style>
+    <style>/* PC */
+@media (min-width: 64em) {
+}
+
+/* Tablet and mobile */
+@media (max-width: 63.9375em) {
+  /* .btn {
+    padding: 13px 16px;
+  } */
+
+  #nav .subnav a {
+    padding: 5px 16px;
+  }
+
+  #footer .copyright a {
+    display: inline-block;
+    padding: 10px 0;
+  }
+}
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+  #footer .socials-list {
+    font-size: 48px;
+  }
+
+  #footer .socials-list a {
+    margin: 0 8px;
+  }
+
+  .sleep-title h2 {
+    font-size: 20px;
+  }
+
+  .sleep-title {
+    padding: 30px 16px;
+  }
+
+  .sleep-info {
+    width: 600px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+  .s-full-width,
+  #content .s-col-full {
+    width: 100% !important;
+  }
+
+  .s-mt-8 {
+    margin-top: 8px;
+  }
+
+  #header {
+    overflow: hidden;
+  }
+
+  #header .menu-mobile-btn {
+    display: block;
+  }
+
+  #nav {
+    display: block;
+  }
+
+  #nav .subnav {
+    position: initial;
+    background-color: #333;
+  }
+
+  #nav .subnav a {
+    color: #fff;
+    padding: 5px 40px;
+  }
+
+  #nav li:hover .subnav {
+    display: none;
+  }
+
+  #nav li a {
+    padding: 1px 24px;
+  }
+
+  #nav > li {
+    display: block;
+  }
+
+  #nav > li:first-child {
+    display: inline-block;
+  }
+
+  #footer .socials-list {
+    font-size: 28px;
+  }
+
+  #footer .socials-list a {
+    margin: 0 4px;
+  }
+
+  #ngungay {
+    width: 180px;
+  }
+
+  .btn {
+    width: 150px;
+  }
+
+  .sleep-title h2 {
+    font-size: 14px;
+  }
+
+  .sleep-title {
+    display: none;
+    padding: 8px;
+  }
+
+  .info-details h4 {
+    padding: 4px;
+    font-size: 13px;
+  }
+
+  .info-details:first-child {
+    border-start-start-radius: 10px;
+    border-start-end-radius: 10px;
+  }
+
+  .sleep-info {
+    width: 230px;
+    max-width: calc(100% - 16px);
+    max-height: calc(100% - 16px);
+  }
+
+  #control-music .button-music:hover {
+    opacity: 1;
+  }
+
+  .mute-music:hover,
+  .dropdown-music:hover {
+    background-color: #000;
+  }
+}
+
+/* Đếm ngày yêu mobile */
+@media (max-width: 992px) {
+  #wrapper {
+    grid-column: span 12;
+  }
+
+  #clock-box #clock {
+    grid-column: 2 / 12;
+  }
+
+  #demngayyeu .avt {
+    width: 120px;
+    height: 120px;
+  }
+
+  #info .one,
+  #info .two {
+    grid-column: span 12;
+  }
+
+  #heart {
+    grid-column: span 12;
+    padding-bottom: 1rem;
+  }
+
+  #demngayyeu footer {
+    font-size: 1.2rem;
+    margin: 0;
+    padding-bottom: 2rem;
+  }
+}</style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js"
+        integrity="sha512-42PE0rd+wZ2hNXftlM78BSehIGzezNeQuzihiBCvUEB3CVxHvsShF86wBWwQORNxNINlBPuq7rG4WWhNiTVHFg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div id="main">
+        <!-- Begin: Header -->
+        <div id="header">
+            <ul id="nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#demngayyeu">Đếm ngày yêu</a></li>
+                <li><a href="#tinhgiongu">Tính giờ ngủ</a></li>
+            </ul>
+
+            <!-- Mobile menu button -->
+            <div id="mobile-menu" class="menu-mobile-btn">
+                <i class="menu-icon fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <!-- End: Header -->
+
+        <!-- Begin: Slider -->
+        <div id="slider">
+            <div class="mySlides">
+                <div id="slider1"></div>
+            </div>
+            <div class="mySlides">
+                <div id="slider2"></div>
+            </div>
+            <div class="mySlides">
+                <div id="slider3"></div>
+            </div>
+            <div class="mySlides">
+                <div id="slider4"></div>
+            </div>
+        </div>
+        <!-- End: Slider -->
+
+        <!-- Begin: Đếm ngày yêu -->
+        <div id="demngayyeu">
+            <div id="mask"></div>
+            <div id="wrapper">
+                <h1>ĐẾM NGÀY YÊU</h1>
+
+                <div id="clock-box">
+                    <div id="clock">
+                        <date>0 DAYS</date>
+                        <time>00:00:00</time>
+                    </div>
+                </div>
+
+                <div id="info">
+                    <div class="one">
+                        <img src="./assets/img/demngayyeu/main.jpg" alt="male" class="avt">
+
+                        <p>Nguyễn Thế Khải</p>
+                    </div>
+                    <div id="heart">
+                        ❤<anni>...</anni>
+                    </div>
+                    <div class="two">
+                        <img src="./assets/img/demngayyeu/main2.jpg" alt="female" class="avt">
+
+                        <p>Lương Thị Trang</p>
+                    </div>
+                </div>
+                <footer>Cảm ơn em vì đã đến bên anh 💕</footer>
+            </div>
+        </div>
+        <!-- End: Đếm ngày yêu -->
+
+        <!-- Begin: Tính giờ ngủ -->
+        <div id="tinhgiongu">
+            <div class="sleep-info">
+                <div class="sleep-title">
+                    <h2>Nếu bạn đi ngủ ngay bây giờ, hãy thức dậy vào 1 trong các thời điểm:</h2>
+                </div>
+                <div class="sleep-container">
+                    <div class="info-details" id="info1"></div>
+                    <div class="info-details" id="info2"></div>
+                    <div class="info-details" id="info3"></div>
+                    <div class="info-details" id="info4"></div>
+                    <div class="info-details" id="info5"></div>
+                    <div class="info-details" id="info6"></div>
+                </div>
+            </div>
+        </div>
+        <!-- End: Tính giờ ngủ -->
+
+        <!-- Begin: Footer -->
+        <div id="footer">
+            <div class="socials-list">
+                <a href="https://www.facebook.com/ntkhaiuet" aria-label="Facebook" target="_blank"><i
+                        class="fa-brands fa-square-facebook"></i></a>
+                <a href="https://www.youtube.com/@trangtrang0103" aria-label="Youtube" target="_blank"><i
+                        class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com/kiahuet/" aria-label="Instagram" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.github.com/ntkhaiuet" aria-label="Github" target="_blank"><i
+                        class="fa-brands fa-github"></i></a>
+            </div>
+            <p class="copyright">Powered by <a href="https://thekhai.xyz">ntkhaiuet</a></p>
+        </div>
+        <!-- End: Footer -->
+
+        <!-- Begin: Audio -->
+        <div id="music" style="display: none;">
+            <audio id="audio"></audio>
+        </div>
+        <!-- End: Audio -->
+
+        <!-- Begin: Control music -->
+        <div id="control-music">
+            <div class="dropdown-music">
+                <i class="fa-solid fa-music"></i>
+            </div>
+            <div class="mute-music">
+                <!-- <i class="fa-solid fa-volume-high"></i> -->
+                <i class="fa-solid fa-volume-xmark"></i>
+            </div>
+            <div class="list-music">
+                <ul class="ul-list-music"></ul>
+            </div>
+            <h6 class="title-music"></h6>
+            <div class="list-button">
+                <div id="repeat" class="button-music" title="Lặp lại">
+                    <i class="fa-solid fa-rotate-right"></i>
+                </div>
+                <div id="backward" class="button-music">
+                    <i class="fa-solid fa-backward"></i>
+                </div>
+                <div id="play-or-pause" class="button-music">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+                <div id="forward" class="button-music">
+                    <i class="fa-solid fa-forward"></i>
+                </div>
+                <div id="shuffle" class="button-music" title="Phát ngẫu nhiên">
+                    <i class="fa-solid fa-shuffle"></i>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- End: Control music -->
+
+    </div>
+
+    <script src="./assets/js/mobileMenu.js"></script>
+    <script src="./assets/js/demngayyeu.js"></script>
+    <script src="./assets/js/slider.js"></script>
+    <script src="./assets/js/tinhgiongu.js"></script>
+    <script src="./assets/js/musicControl.js"></script>
+</body>
+
+</html>

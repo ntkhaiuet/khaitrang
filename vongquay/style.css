@@ -1,0 +1,55 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: rgba(68, 70, 84, 1);
+}
+
+.main {
+  display: flex;
+  margin: auto;
+  position: relative;
+  width: 380px;
+  height: 380px;
+  margin-top: 258px;
+}
+
+.spin {
+  position: absolute;
+  background-image: url("img/spin.png");
+  background-size: 100%;
+  width: 380px;
+  height: 380px;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+}
+
+.arrow {
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  /* background-color: red; */
+  border-left: 30px solid transparent;
+  border-right: 30px solid red;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}

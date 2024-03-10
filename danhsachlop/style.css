@@ -1,0 +1,118 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(to top, #49a09d, #5f2c82) fixed;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+.container {
+    top: 1%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+table {
+    width: 800px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.headerRow:hover {
+    cursor: pointer;
+}
+
+th, td {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+th {
+    text-align: center;
+}
+
+thead th {
+    background-color: #55608f;
+}
+
+tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+tbody td {
+    position: relative;
+    text-align: center;
+}
+
+tbody td:hover::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -9999px;
+    bottom: -9999px;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+}
+
+th.asc .arrow::after {
+    content: "\21C8";
+}
+
+th.desc .arrow::after {
+    content: "\21CA";
+}
+
+.arrow::after {
+    content: "\21C5";
+}
+
+tr td:nth-child(3), tr td:nth-child(6) {
+    text-align: left;
+}
+
+tr td:nth-child(7) {
+    display: none;
+}
+
+#reset {
+    background-color: #EA4C89;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 14px;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin-bottom: 10px;
+    padding: 10px 16px;
+    text-align: center;
+}
+
+#reset:hover, #reset:focus {
+    background-color: #F082AC;
+}
+
+@media only screen and (max-width: 500px) {
+    table {
+        width: 375px;
+    }
+
+    body {
+        font-size: 7px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+  }
